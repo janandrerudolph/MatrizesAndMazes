@@ -1,0 +1,87 @@
+\documentclass[oneside]{thesisclass}
+% Based on thesisclass.cls of Timo Rohrberg, 2009
+% ----------------------------------------------------------------
+% Thesis - Main document
+% ----------------------------------------------------------------
+
+
+
+
+%% -----------------------------
+%% | Information for titlepage |
+%% -----------------------------
+
+\newcommand{\myname}{Jan Andre Rudolph}
+\newcommand{\mytitle}{Matrices \& Mazes \\in Quantum Algorithms}
+\newcommand{\semesterD}{Sommersemester 2017}
+\newcommand{\semesterE}{Summer term 2017}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Here, main documents begins %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\selectlanguage{english}
+
+\frontmatter
+\pagenumbering{roman}
+\include{titlepage}
+
+
+%% -------------------
+%% |   Directories   |
+%% -------------------
+\tableofcontents
+
+
+%% -----------------
+%% |   Main part   |
+%% -----------------
+\mainmatter
+\pagenumbering{arabic}
+\chapter{Introduction}
+\nocite{*}
+The operationality of Quantum Computers will progress quickly in the next years. 
+When Moores Law reaches the "firewall" of atomar physics, the quantum physics will lead us to a new kind of information, carried by the so-called q-bits. 
+Therefore the importance of understanding quantum algorithms rises. 
+All computer scientists should at least be aware of the possibilities quantum algorithms provide, because the work of today may be affected by quantum computing in the near future. \\
+\\There is not yet a high level quantum coding language that compiles in some sense, but we have three basic options to represent quantum operations.
+There are so called quantum circuits that just represent the physical structure. 
+But unlike electronic circuits, these are very complicated to interpret.
+Due to the quantum entanglement, one cannot liniarily read the circuit. 
+Merely one has to understand the whole circuit at once, including all measurements. 
+If we do not want to understand the complete circuit before we understand one part of it, we can use the linear algebra. \\
+\\We will see that we can use matrices to represent circuits or smaller modules of them. 
+Not only that mathematics is a global language with the advantages of provability and that computers understand it.
+But we will also see that we now have the possibility to explicitly represent, calculate and understand quantum entanglement.
+The only remaining problem (besides scalability) is that matrices do not provide a natural image nor the idea of what happens.\\
+\\This is where the mazes as our third option of representation have their might.
+The so called mazes are a graph based translation of the matrices just like adjacency matrices and the corresponding adjacency graphs - just a little more complicated.
+We will introduce some mice as a guide throu the mazes and as an anchor for the imagination.\\
+\\This Thesis aims to briefly explain the concepts of matrices and mazes and connects them to the idea of circuits. 
+Some important matrices for quantum algorithms will be introduced and explained - also by the use of mazes.
+The text is mainly inspired by the Book from R.J.Lipton and K.W.Regan.
+It could target any kind of computer scientists or persons with an equal level of mathematics and technology.
+\chapter{Linear Algebra}
+
+\chapter{Boolean Functions}
+
+\section{CNOT \& SWAP}
+
+\section{Toffoli Gate}
+
+\chapter{Hadamard Matrix}
+
+\chapter{Fourier Matrix}
+
+\chapter{Conclusions}
+
+%% --------------------
+%% |   Bibliography   |
+%% --------------------
+
+\bibliographystyle{plain}
+\bibliography{mybib.bib}
+
+\end{document}

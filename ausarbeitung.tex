@@ -1,0 +1,55 @@
+\documentclass[oneside]{thesisclass}
+% Based on thesisclass.cls of Timo Rohrberg, 2009
+% ----------------------------------------------------------------
+% Thesis - Main document
+% ----------------------------------------------------------------
+
+
+
+
+%% -----------------------------
+%% | Information for titlepage |
+%% -----------------------------
+
+\newcommand{\myname}{Erika Mustermann}
+\newcommand{\mytitle}{Shortest Paths}
+\newcommand{\semesterD}{Sommersemester 2016}
+\newcommand{\semesterE}{Summer term 2015}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Here, main documents begins %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\selectlanguage{german}
+
+\frontmatter
+\pagenumbering{roman}
+\include{titlepage}
+
+
+%% -------------------
+%% |   Directories   |
+%% -------------------
+\tableofcontents
+
+
+%% -----------------
+%% |   Main part   |
+%% -----------------
+\mainmatter
+\pagenumbering{arabic}
+\chapter{Introduction}
+~\cite{Krumke2009a}
+
+\chapter{Conclusions}
+
+%% --------------------
+%% |   Bibliography   |
+%% --------------------
+
+\bibliographystyle{plain}
+\bibliography{mybib.bib}
+
+\end{document}
