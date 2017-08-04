@@ -65,9 +65,59 @@ The text is mainly inspired by the Book from R.J.Lipton and K.W.Regan.
 It could target any kind of computer scientists or persons with an equal level of mathematics and technology.
 \chapter{Linear Algebra}
 
+%\section{Hilbert Space}
+Before we can talk about matrices, we need to consider the role of vectors and matrices in the model.
+To understand the Hilbert space we are moving in, it seems a good first step to have a look at the Euclidean space.
+The Euclidean space is in general n-dimensional.
+Normally one describes geometrical objects as subsets of the space, where vectors correspond to points.
+With the inner product, the Euclidean space provides the possibility to measure angles and distances.
+To represent quantum states, we need complex numbers and therefore the Hilbert space.
+The scalar product and the transponition now need the complex conjugated of the imaginary numbers but in general the operations are the same.\\
+\\To represent an algorithm we now use a vector as input.
+We multiply one or more of oir matrices on the left side and the result is again a vector.
+This vector represents the output.
+
+\section{Feasibility}
+But we cannot build just any matrix in an actual quantum circuit.
+Or in other words not all matrices are quantum feasible.
+To determine which matrices are feasible, we first look at the definition of feasibility for quantum circuits.
+%TODO continue
+
 \chapter{Boolean Functions}
+The first class of matrices are those representing boolean functions.
+Well, actually those matrices do not represent the functions themselfs, but we will need some boundary conditions to succeed.
+These conditions must predefine how to interpret the input aud output vector.
+But not all boolean functions are quantum feasible and for some it is not yet clear if they are.
+So in the following there will be some matrices introduced and then the link to boolean functions is created.
 
 \section{CNOT \& SWAP}
+The good thing about matrices of this class is that they are only filled with ones and zeros.
+So we have a kind of easy introduction.
+And what is the easiest matrix one can imagine?
+Well the identity - this means that the input equals the output.
+If we now swap the columns in the middle as shown in figure %TODO grafic
+we have to look at the binary strings to understand what physically happens.
+For no input or input on both lanes, the behaviour equals the identity.
+But if there is only input on one lane, the '1' in the SWAP matrix connects the binary strings to their inverse, respectively '01' -> '10' and '10' -> '01'.
+And this is just what the corresponding maze%TODO grafic
+shows us - the edges connect%TODO complete
+So in general this matrix swaps the two lanes.\\
+\\Due to the superpositioning, the behaviour heavily changes if we choose to swap two other columns as shown in figure%TODO grafic
+as matrix - the CNOT matrix - and in figure%TODO grafic
+as a maze.
+As we can easity read in the maze, the second lane - the LSB in the boolean string - is toggled when and only when the first lane - the MSB in the boolean string - is one.\\
+\\As already mentioned, we can use this behaviour to implement some boolean functions.
+Let us do this for the XOR function as an example.\\
+\\Since we cannot change the behaviour of the CNOT gate, we have to find a convention for the in- and output that fits the desired function.
+We need both lanes as input and one of the two output lanes that is interpreted as the result.
+Refering to the maze again, we can just try out both lanes.
+If we choose the first lane, the output for XOR(0,1) would be 0 since '01' is connected to '01' where 0 is on the first lane.
+This obviously does not match the XOR function.
+But for the second lane regrded as output, we obtain the results we expected.\\
+\\Another example is the NOT function - which only takes one input lane.
+Looking at the maze, we directly see that the second lane is toggled when the first lane is '1'.
+This is what we want to achieve - so we set the first lane '1' and regard the second lane as in- and output.
+THis way the input is always toggled.
 
 \section{Toffoli Gate}
 
