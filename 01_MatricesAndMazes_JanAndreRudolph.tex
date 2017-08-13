@@ -89,6 +89,7 @@ Well, actually those matrices do not represent the functions themselfs, but we w
 These conditions must predefine how to interpret the input aud output vector.
 But not all boolean functions are quantum feasible and for some it is not yet clear if they are.
 So in the following there will be some matrices introduced and then the link to boolean functions is created.
+%TODO standard basis -> unitarity
 
 \section{CNOT \& SWAP}
 The good thing about matrices of this class is that they are only filled with ones and zeros.
@@ -122,6 +123,24 @@ THis way the input is always toggled.
 \section{Toffoli Gate}
 
 \chapter{Hadamard Matrix}
+Having discussed boolean functions, we can now take the next step.
+Hadamard matrices aim to have the maximum possible determinant while beeing filled with only plus and minus '1' - and being orthogonal.
+The orthogonality is important at this point since we need unitary matrices for our quantum algorithms.
+Unfortunately, it is not proven that those matrices exist for every order.
+For most orders, it is even proven that there exists an upper boundary for the determinant of Hadamard matrices - if such exist - that is unequal smaller than the squareroot of the order.
+The general upperbound for the Hadamard matrices determinant is the squareroot of the order.
+Luckily we can easily find Hadamard matrices that fulfill%TODO ?
+this upperbound - if we %TODO beschränken
+to orders equal some power of two.
+While defining this general Hadamard matrix recursively, we can parallely prove feasibility.\\
+\\Initially we take the matrix of order two which is shown in figure %TODO grafic
+which is a Hadamard matrix for the following two reasons.
+The two column or row vectors are obviously orthogonal, therefore they build a standard basis - so the matrix is orthogonal.
+The determinant d_2 is defined by %TODO formula
+which as we remember reaches the upperbound.
+By Tensoring this H_2 Hadamard matrix with itself, we gain the H_4 matrix of order 4 which is again a Haramard matrix.
+This tensoring with H_2 can be continued until the order equals any power of two.\\
+\\%TODO feasibility
 
 \chapter{Fourier Matrix}
 
