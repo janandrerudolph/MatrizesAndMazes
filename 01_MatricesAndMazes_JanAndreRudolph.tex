@@ -84,13 +84,14 @@ To determine which matrices are feasible, we first look at the definition of fea
 %TODO continue
 
 \chapter{Boolean Functions}
+%TODO mention that mazes are simple
 The first class of matrices are those representing boolean functions.
 Well, actually those matrices do not represent the functions themselfs, but we will need some boundary conditions to succeed.
 These conditions must predefine how to interpret the input aud output vector.
 But not all boolean functions are quantum feasible and for some it is not yet clear if they are.
 So in the following there will be some matrices introduced and then the link to boolean functions is created.
 
-\section{CNOT \& SWAP}
+\section{SWAP}
 The good thing about matrices of this class is that they are only filled with ones and zeros.
 So we have a kind of easy introduction.
 And what is the easiest matrix one can imagine?
@@ -101,8 +102,11 @@ For no input or input on both lanes, the behaviour equals the identity.
 But if there is only input on one lane, the '1' in the SWAP matrix connects the binary strings to their inverse, respectively '01' -> '10' and '10' -> '01'.
 And this is just what the corresponding maze%TODO grafic
 shows us - the edges connect%TODO complete
-So in general this matrix swaps the two lanes.\\
-\\Due to the superpositioning, the behaviour heavily changes if we choose to swap two other columns as shown in figure%TODO grafic
+So in general this matrix swaps the two lanes.
+
+\section{CNOT}
+%TODO explain CNOT == controled not
+Due to the superpositioning, the behaviour heavily changes if we choose to swap two other columns as shown in figure%TODO grafic
 as matrix - the CNOT matrix - and in figure%TODO grafic
 as a maze.
 As we can easity read in the maze, the second lane - the LSB in the boolean string - is toggled when and only when the first lane - the MSB in the boolean string - is one.\\
@@ -117,9 +121,21 @@ But for the second lane regrded as output, we obtain the results we expected.\\
 \\Another example is the NOT function - which only takes one input lane.
 Looking at the maze, we directly see that the second lane is toggled when the first lane is '1'.
 This is what we want to achieve - so we set the first lane '1' and regard the second lane as in- and output.
-THis way the input is always toggled.
+This way the input is always toggled.
 
 \section{Toffoli Gate}
+If we extend the CNOT gate by another control lane we call it CCNOT - controled controled not - also known as Toffoli gate.
+This gate has three lanes.
+Therefore the corresponding matrix - as well as the maze - displays 2^3 superpositions.
+So it is of order 8.
+Looking at the matrix%TODO grafic
+it might not be intuitive where the 'controled controled' comes from.
+But again, the maze%TODO grafic
+is more clear. 
+All nodes are connected to their identity, only the last two are toggled.
+In other words - if you look at the boolean strings of these nodes - the input of the last physical lane is toggled when and only when the first two lanes are one.
+
+\section{Controled M}
 
 \chapter{Hadamard Matrix}
 
