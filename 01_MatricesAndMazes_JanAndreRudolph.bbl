@@ -1,8 +1,12 @@
-q\begin{thebibliography}{1}
+\begin{thebibliography}{1}
 
-\bibitem{Krumke2009a}
-S.O. Krumke and H.~Noltemeier.
-\newblock {\em Graphentheoretische Konzepte und Algorithmen}.
-\newblock Leitf{\"a}den der Informatik. Vieweg + Teubner, 2009.
+\bibitem{Hadamard}
+http://www.indiana.edu/ maxdet/.
+\newblock The hadamard maximal determinant problem, 2012.
+
+\bibitem{QuantumAlgorithms}
+Kenneth W.~Regan Richard J.~Lipton.
+\newblock {\em Quantum Algorithms via Linear Algebra}.
+\newblock 2014.
 
 \end{thebibliography}
